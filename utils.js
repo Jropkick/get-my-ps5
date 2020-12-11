@@ -5,7 +5,7 @@ const cmd = require("node-cmd");
  * Recursively tries to add a product to the cart
  * @return string
  */
-function addToCartLoop(id, guid, numTries, checkInterval = 10000) {
+function addToCartLoop(id, guid, numTries, checkInterval = 1000) {
     return new Promise(resolve => {
         axios.post(`https://api.direct.playstation.com/commercewebservices/ps-direct-us/users/anonymous/carts/${guid}/entries`, {
             "product": {
